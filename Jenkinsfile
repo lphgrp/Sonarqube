@@ -3,9 +3,8 @@ pipeline {
 	stages {
 		stage ("--Code_Scan---") {
 			steps {
-				def scannerhome = tool 'SonarScanner';
 				withSonarQubeEnv('Sonar_Qube') {
-				  bat "${scannerHome}/bin/sonar-scanner"
+				  bat "D:\\LPH_Learning\\Installed_Soft\\sonar-scanner-4.2.0.1873-windows\\bin\\sonar-scanner"
 				}
 			}
 		}
