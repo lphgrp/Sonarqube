@@ -13,7 +13,7 @@ pipeline {
 				bat "mvn clean"
 			}
 		}
-		stage ("--Create WarFile---") {
+		stage ("--Create Jar---") {
 			steps {
 				bat "mvn package"
 			}
