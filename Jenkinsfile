@@ -18,10 +18,5 @@ pipeline {
 				bat "mvn package"
 			}
 		}
-		stage ("--Deploy WarFile---") {
-			steps {
-				bat "copy target\\MavenWeb.war D:\\LPH_Learning\\Installed_Soft\\Tomcat_Jenkins\\webapps\\"
-			}
-		}
 	}
 }
