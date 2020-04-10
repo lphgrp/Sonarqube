@@ -4,7 +4,7 @@ pipeline {
 		stage ("--Code_Scan---") {
 			steps {
 				withSonarQubeEnv('Sonar_Server') {
-				  bat "%Sonar_Analysis%/sonar-scanner -Dsonar.login=admin -Dsonar.password=admin -Dsonar.projectKey=com.Sonar -Dsonar.projectName=SonarProject"
+				  bat "'%Sonar_Analysis%'/sonar-scanner.bat -Dsonar.login=admin -Dsonar.password=admin -Dsonar.projectKey=com.Sonar -Dsonar.projectName=SonarProject"
 				}
 			}
 		}
