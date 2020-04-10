@@ -1,10 +1,12 @@
 pipeline {
 	agent any
+	environment {
+        def sqScannerMsBuildHome = tool 'Sonar_Analysis'
+    }
 	stages {
 		stage ("--Code_Scan---") {
 			steps {
-			    def sqScannerMsBuildHome = tool 'Sonar_Analysis'
-				withSonarQubeEnv('Sonar_Server') {
+			      withSonarQubeEnv('Sonar_Server') {
 				  bat "${sqScannerMsBuildHome}\\sonar-scanner.bat -Dsonar.login=admin -Dsonar.password=admin -Dsonar.projectKey=com.Sonar -Dsonar.projectName=SonarProject"
 				  }
 			}
